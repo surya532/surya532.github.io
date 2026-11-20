@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Surya Devathi – Backend Software Engineer</title>
+<meta name="description" content="Backend software engineer building event-driven microservices and data pipelines in Java, Python, Kafka, and AWS. Projects, experience, and contact links.">
+<meta property="og:title" content="Surya Devathi – Backend Software Engineer">
+<meta property="og:description" content="Distributed systems, event-driven microservices, and data pipelines. Java, Python, Spring Boot, Kafka, gRPC, AWS.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2314202B'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' fill='%236CB8D4' font-family='Georgia,serif'%3ES%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#F3F5F7; --surface:#FFFFFF; --ink:#14202B; --muted:#4F6071; --line:#CBD5DD;
+  --accent:#1F6F8B; --ok:#2C7A4B; --warn:#9A5B13; --bad:#A33A3A;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F1A22; --surface:#16252F; --ink:#E6EDF2; --muted:#9DB0BF; --line:#2A3C49;
+    --accent:#6CB8D4; --ok:#6CC28F; --warn:#E0A862; --bad:#E58A8A; color-scheme:dark;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:1rem}
+body{margin:0;background:var(--bg);color:var(--ink);font:1.0625rem/1.65 var(--sans);-webkit-text-size-adjust:100%}
+main{max-width:46rem;margin:0 auto;padding:4rem 1.25rem 5rem}
+a{color:var(--accent);text-underline-offset:.18em}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:2px}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.2;margin:0}
+h1{font-size:clamp(2.4rem,7vw,3.6rem);letter-spacing:-.01em}
+h2{font-size:1.65rem;margin:4rem 0 1.25rem}
+h3{font-size:1.2rem}
+p{margin:0 0 1rem;max-width:62ch}
+.role{font-family:var(--serif);font-size:1.35rem;color:var(--muted);margin:.5rem 0 1.5rem}
+.lede{font-size:1.15rem;max-width:56ch}
+.links{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;margin:1.5rem 0 0;padding:0;list-style:none;font-weight:600}
+
+/* the one memorable element: a replay ledger */
+.ledger{margin:2.75rem 0 0;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:4px;overflow:hidden}
+.ledger figcaption{padding:.85rem 1.1rem;border-bottom:1px solid var(--line);font-size:.92rem;color:var(--muted)}
+.ledger .scroll{overflow-x:auto}
+.ledger table{width:100%;border-collapse:collapse;font:.88rem/1.5 var(--mono);min-width:30rem}
+.ledger th{font-weight:600;text-align:left;padding:.55rem 1.1rem;color:var(--muted);border-bottom:1px solid var(--line)}
+.ledger td{padding:.5rem 1.1rem;border-bottom:1px solid var(--line);white-space:nowrap}
+.ledger tr:last-child td{border-bottom:0}
+.ledger .dup td{background:color-mix(in srgb,var(--warn) 12%,transparent)}
+.ledger .bad td{background:color-mix(in srgb,var(--bad) 12%,transparent)}
+.s-ok{color:var(--ok)} .s-dup{color:var(--warn)} .s-bad{color:var(--bad)}
+.ledger .note{padding:.85rem 1.1rem;border-top:1px solid var(--line);font-size:.9rem;color:var(--muted)}
+.ledger .note p{margin:0;max-width:none}
+
+/* experience: a real timeline */
+.job{display:grid;grid-template-columns:9.5rem 1fr;gap:0 1.5rem;padding:1.5rem 0;border-top:1px solid var(--line)}
+.job:first-of-type{border-top:0;padding-top:0}
+.when{font-size:.92rem;color:var(--muted);padding-top:.25rem}
+.job ul{margin:.75rem 0 0;padding-left:1.15rem}
+.job li{margin:.4rem 0;max-width:60ch}
+.job .where{color:var(--muted);margin:.15rem 0 0}
+@media (max-width:40rem){.job{grid-template-columns:1fr}.when{padding:0 0 .25rem}}
+
+/* projects: ordered by importance, so the first is larger */
+.project{padding:1.25rem 0;border-top:1px solid var(--line)}
+.project:first-of-type{border-top:0}
+.project.lead{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1.4rem 1.4rem 1.2rem;margin-bottom:.75rem}
+.project h3 a{color:inherit}
+.project .stack{font-size:.92rem;color:var(--muted);margin:.25rem 0 .75rem}
+.project p{margin-bottom:.6rem}
+
+.stack-list{margin:0;padding:0;list-style:none;display:grid;gap:.6rem}
+.stack-list li{display:grid;grid-template-columns:9.5rem 1fr;gap:1.5rem}
+.stack-list b{font-weight:600}
+@media (max-width:40rem){.stack-list li{grid-template-columns:1fr;gap:0}}
+footer{margin-top:4.5rem;padding-top:1.5rem;border-top:1px solid var(--line);color:var(--muted);font-size:.92rem}
+.skip{position:absolute;left:-999px}.skip:focus{left:1rem;top:1rem;background:var(--surface);padding:.5rem .75rem;z-index:5}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<main id="main">
+
+<header>
+  <h1>Surya Devathi</h1>
+  <p class="role">Backend software engineer, San Francisco Bay Area</p>
+  <p class="lede">I build event-driven microservices and data pipelines for systems that can’t go down: fintech payroll and public-sector platforms where a bad deploy affects real paychecks and real court cases.</p>
+  <ul class="links">
+    <li><a href="https://github.com/surya532">GitHub</a></li>
+    <li><a href="https://www.linkedin.com/in/surya-devathi">LinkedIn</a></li>
+  </ul>
+
+  <figure class="ledger">
+    <figcaption>What my Kafka pipeline does when the same event arrives twice</figcaption>
+    <div class="scroll">
+    <table>
+      <thead><tr><th>Event</th><th>Delivery</th><th>Result</th></tr></thead>
+      <tbody>
+        <tr><td>evt-1001</td><td>first</td><td class="s-ok">applied, balance +500</td></tr>
+        <tr><td>evt-1002</td><td>first</td><td class="s-ok">applied, balance +250</td></tr>
+        <tr class="dup"><td>evt-1001</td><td>replay</td><td class="s-dup">duplicate, no effect</td></tr>
+        <tr class="bad"><td>not json</td><td>first</td><td class="s-bad">dead-letter topic, no retry</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="note"><p>Illustrative rows, not measured output. The behavior is tested against real Kafka and PostgreSQL in <a href="https://github.com/surya532/idempotent-kafka-pipeline">idempotent-kafka-pipeline</a>.</p></div>
+  </figure>
+</header>
+
+<section aria-labelledby="exp">
+  <h2 id="exp">Experience</h2>
+
+  <article class="job">
+    <div class="when">Nov 2022 to present</div>
+    <div>
+      <h3>Software Engineer, ADP</h3>
+      <p class="where">Roseland, New Jersey</p>
+      <ul>
+        <li>Own 18+ Spring Boot microservices behind enterprise payroll and HR platforms at 99.99% availability.</li>
+        <li>Cut MTTR by 40% by designing Kafka-based observability pipelines processing 1M+ events per hour, with better monitoring, tracing, and alerting.</li>
+        <li>Cut manual provisioning requests by 60% with a self-service platform in Java, Spring Boot, and Python.</li>
+        <li>Improved developer issue-resolution time by 30% with CI/CD tooling on Kubernetes and Docker.</li>
+        <li>Designed gRPC service interfaces and DynamoDB data models for internal platform services.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="job">
+    <div class="when">Aug 2021 to Nov 2022</div>
+    <div>
+      <h3>Software Engineer, Orange County Superior Court</h3>
+      <p class="where">Santa Ana, California</p>
+      <ul>
+        <li>Helped move a legacy monolithic court system to cloud-native microservices.</li>
+        <li>Built Kafka and Redis services processing 500K+ transactions per day for case-management workflows.</li>
+        <li>Secured authentication for 10,000+ users with OAuth2 and single sign-on (SSO) through Keycloak.</li>
+        <li>Improved backend performance by up to 35% through SQL query optimization and service tuning.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="job">
+    <div class="when">Jul 2017 to Dec 2019</div>
+    <div>
+      <h3>Software Engineer, GGK Tech</h3>
+      <p class="where">Hyderabad, India</p>
+      <ul>
+        <li>Built backend services and REST APIs in Java and Python for enterprise integrations.</li>
+        <li>Optimized SQL queries and set up automated testing and CI/CD with Jenkins and Git.</li>
+      </ul>
+    </div>
+  </article>
+
+  <p style="margin-top:1rem;color:var(--muted)">M.S. Computer Science, Wichita State University. B.Tech. Computer Science, Jawaharlal Nehru Technological University, Anantapur.</p>
+</section>
+
+<section aria-labelledby="proj">
+  <h2 id="proj">Projects</h2>
+  <p style="color:var(--muted)">Personal projects, built independently of my employer. They demonstrate patterns, not any production system.</p>
+
+  <article class="project lead">
+    <h3><a href="https://github.com/surya532/idempotent-kafka-pipeline">idempotent-kafka-pipeline</a></h3>
+    <p class="stack">Java 17, Spring Boot, Kafka, PostgreSQL, Testcontainers</p>
+    <p>Exactly-once effects on top of at-least-once Kafka delivery. The dedup insert and the balance update share one database transaction, failed messages retry with backoff and then go to a dead-letter topic, and the behavior is tested against real Kafka and PostgreSQL in CI.</p>
+  </article>
+
+  <article class="project">
+    <h3><a href="https://github.com/surya532/grpc-dynamodb-config-service">grpc-dynamodb-config-service</a></h3>
+    <p class="stack">Python, gRPC, Protocol Buffers, DynamoDB</p>
+    <p>A versioned config service. gRPC contracts sit in front of a DynamoDB single-table design with optimistic locking, and the README explains the access patterns and why DynamoDB fits.</p>
+  </article>
+
+  <article class="project">
+    <h3><a href="https://github.com/surya532/kafka-mini-project">kafka-mini-project</a></h3>
+    <p class="stack">Python, Kafka, Docker</p>
+    <p>Hands-on Kafka fundamentals: partitions, message keys, consumer groups, offsets, replay, and rebalancing.</p>
+  </article>
+</section>
+
+<section aria-labelledby="skills">
+  <h2 id="skills">Tools I work with</h2>
+  <ul class="stack-list">
+    <li><b>Languages</b><span>Java 17, Python, SQL, TypeScript</span></li>
+    <li><b>Services</b><span>Spring Boot, REST APIs, gRPC, microservices, event-driven architecture</span></li>
+    <li><b>Data</b><span>Apache Kafka, PostgreSQL, Redis, DynamoDB, Elasticsearch</span></li>
+    <li><b>Infrastructure</b><span>AWS, Kubernetes, Docker, Terraform, Ansible, OpenStack, CI/CD</span></li>
+    <li><b>Reliability</b><span>Observability, tracing, monitoring and alerting</span></li>
+  </ul>
+</section>
+
+<footer>
+  <p>I’m open to Software Engineer II through Senior backend and distributed systems roles. The best way to reach me is <a href="https://www.linkedin.com/in/surya-devathi">LinkedIn</a>.</p>
+</footer>
+
+</main>
+</body>
+</html>
