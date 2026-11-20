@@ -1,5 +1,8 @@
 # surya532.github.io
 
-Personal portfolio, served with GitHub Pages at https://surya532.github.io
+Personal portfolio of Surya Devathi, backend software engineer. Served with GitHub Pages at https://surya532.github.io
 
-Single static page (index.html): no build step, no dependencies. Every claim on it matches my LinkedIn profile.
+- LinkedIn: https://www.linkedin.com/in/surya-devathi
+- GitHub: https://github.com/surya532
+
+A single static page (`index.html`) with no build step and no dependencies.
