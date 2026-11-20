@@ -1,4 +1,4 @@
-# surya532.github.io
+surya532.github.io
 
 Personal portfolio, served with GitHub Pages at https://surya532.github.io
 
